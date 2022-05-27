@@ -12,9 +12,9 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.new(review_params)
+    @list = List.new(list_params)
     if @list.save
-      redirect_to list_path
+      redirect_to @list, notice: 'Created list'
     else
       render :new
     end
@@ -22,7 +22,7 @@ class ListsController < ApplicationController
 
   private
 
-  def review_params
+  def list_params
     params.require(:list).permit(:name)
   end
 end
