@@ -1,8 +1,11 @@
-<h1>Lists</h1>
-<ul>
-<% @lists.each do |list| %>
-<li><%= link_to list.title, list_path(list) %></li>
-<% end %>
-</ul>
+<div class="banner">
+  <h1>My lists</h1>
+</div>
 
-<%= link_to 'Add list', new_list_path %>
+<table>
+  <tr>
+    <% @lists.each do |list| %>
+    <tr><td><%= link_to list.name, list_path(list), class: "lists__item" %></td></tr>
+    <% end %>
+  </tr>
+</table>

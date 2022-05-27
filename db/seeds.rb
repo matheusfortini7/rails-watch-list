@@ -15,3 +15,9 @@ require 'faker'
     rating: rand(0..10)
   )
 end
+
+10.times do
+  List.create(
+    name: %w[Drama Comedy Action Fantasy].sample
+  )
+end
