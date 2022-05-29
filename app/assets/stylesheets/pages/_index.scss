@@ -1,2 +1,51 @@
 // Import page-specific CSS files here.
 @import "home";
+@import url('https://fonts.googleapis.com/css2?family=Rochester&display=swap');
+
+.banner {
+  width: 100%;
+  height: 50vh;
+  background-color: #2f2f2f;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .title {
+    color: #f6f6f6;
+    font-family: 'Rochester', cursive;
+    font-size: 6rem;
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin: 1rem 0 1rem 0;
+  padding: 0 2rem;
+}
+
+.card-category {
+  width: 30vw;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #ffcb74;
+
+  .card__category-item {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .card__category-item:hover {
+    color: #f6f6f6;
+  }
+}

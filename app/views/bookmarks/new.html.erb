@@ -1,5 +1,9 @@
+<h1 class="title">New bookmark</h1>
+
+<div class="container">
 <%= simple_form_for [ @list, @bookmark ] do |f| %>
-<%= f.association :movie, collection: Movie.all %>
-<%= f.input :comment %>
-<%= f.submit 'Done!' %>
+<%= f.association :movie, collection: Movie.all, class: "movie__options" %>
+<%= f.input :comment, class: "comment" %>
+<%= f.submit 'Done!', class: "submit__bookmark" %>
 <% end %>
+</div>

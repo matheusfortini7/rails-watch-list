@@ -1,11 +1,11 @@
 <div class="banner">
-  <h1>My lists</h1>
+  <h1 class="title">Movies list</h1>
 </div>
 
-<table>
-  <tr>
-    <% @lists.each do |list| %>
-    <tr><td><%= link_to list.name, list_path(list), class: "lists__item" %></td></tr>
-    <% end %>
-  </tr>
-</table>
+<div class="cards">
+<% @lists.each do |list| %>
+  <div class="card-category">
+<%= link_to list.name, list_path(list), class: 'card__category-item' %>
+  </div>
+<% end %>
+</div>

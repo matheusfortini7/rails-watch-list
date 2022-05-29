@@ -6,18 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require 'open-uri'
+require 'json'
 
-10.times do
+url = "https://tmdb.lewagon.com/movie/top_rated"
+movies_serialized = URI.open(url).read
+movies = JSON.parse(movies_serialized)
+
+movies["results"].each do |movie|
   Movie.create(
-    title: Faker::Movie.title,
-    overview: Faker::Lorem.sentence,
-    poster_url: Faker::Internet.url,
-    rating: rand(0..10)
-  )
-end
-
-10.times do
-  List.create(
-    name: %w[Drama Comedy Action Fantasy].sample
+    title: movie['original_title'],
+    overview: movie['overview'],
+    poster_url: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}",
+    rating: rand(0.0..10.0)
   )
 end

@@ -1,6 +1,8 @@
-<h1 class="px-5 mt-3">Create new list</h1>
+<div class="container">
+  <h1 class="title">New list</h1>
 
-<%= simple_form_for @list, html: { class: 'px-5' }  do |f| %>
-  <%= f.input :name %>
-  <%= f.submit "Submit list", class: "btn btn-primary" %>
-<% end %>
+  <%= simple_form_for @list do |f| %>
+    <%= f.input :name, class: "name__field" %>
+    <%= f.submit "Create", class: 'button' %>
+  <% end %>
+</div>

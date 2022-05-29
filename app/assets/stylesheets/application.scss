@@ -7,69 +7,164 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/v4-shims';
+@import url('https://fonts.googleapis.com/css2?family=Rochester&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Della+Respira&display=swap');
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 
 body {
-  font-family: Helvetica, sans-serif;
+  background-color: #f6f6f6;
+  font-family: 'Della Respira', serif;
 }
 
-
-
 .navbar {
-  display: flex;
-  justify-content: flex-end;
-  gap: 2rem;
   height: 10vh;
-  background-color: #000;
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+  padding: 0 5rem;
+  background-color: #fff;
 
-  .navbar__item {
-    color: azure;
+  .navbar__list-item  {
+    color: #000;
+    font-size: 1.5rem;
     text-decoration: none;
-    list-style-type: none;
-    font-size: 1rem;
   }
 
-  .navbar__item:last-child {
-    margin: 0 1rem 0 0;
+  .navbar__list-item:hover {
+    color: #ffcb74;
+  }
+}
+
+.submit__button {
+  color: #ffcb74;
+}
+
+.title {
+  color: #2f2f2f;
+  font-family: 'Rochester', cursive;
+  text-align: center;
+  margin: 2rem 0 2rem 0;
+  font-size: 6rem;
+}
+
+.new_list {
+  width: 50%;
+  margin: 0 auto;
+
+  .button {
+    width: 10rem;
+    padding: 1rem 0;
+    border-radius: 10px;
+    background-color:#ffcb74;
+    color: #2f2f2f;
+    border: .1px solid #f6f6f6;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .button:hover {
+    color: #f6f6f6;
   }
 }
 
 .banner {
-  background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2luZW1hfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
-  height: 50vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
 
-  h1 {
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-family: 'Della Respira', serif;
+  display: block;
+  text-align: center;
+}
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.container__show {
+  padding: 1rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.button_add-bookmark {
+  text-decoration: none;
+  width: 10rem;
+  padding: 1rem 0;
+  border-radius: 10px;
+  background-color:#ffcb74;
+  color: #2f2f2f;
+  border: .1px solid #f6f6f6;
+  margin: 1em auto;
+  display: block;
+  text-align: center;
+
+  .button_add-bookmark:hover {
+    color: #f6f6f6;
   }
 }
 
-h2 {
-  color: black;
-  font-weight: bold;
-  text-align: center;
-  margin: 1rem 0;
-}
+.new_bookmark {
+  width: 50%;
+  margin: 0 auto;
 
-table {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 4rem 0 0 0;
-  margin: 0;
+  .submit__bookmark {
+      width: 10rem;
+      padding: 1rem 0;
+      border-radius: 10px;
+      background-color:#ffcb74;
+      color: #2f2f2f;
+      border: .1px solid #f6f6f6;
+      margin: 0 auto;
+      display: block;
 
-  .lists__item {
-    text-decoration: none;
-    font-size: 2rem;
-    color: black;
-    font-family: a;
+      .submit__bookmark:hover {
+        color: #f6f6f6;
+      }
   }
 }

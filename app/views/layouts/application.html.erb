@@ -9,12 +9,17 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <nav class="navbar">
-      <%= link_to 'My lists',  lists_path, class: 'navbar__item'%>
-      <%= link_to 'New list',  new_list_path, class: 'navbar__item'%>
-    </nav>
+    <header>
+      <nav class="navbar">
+          <%= link_to lists_path do %>
+            <i class="fa-solid fa-house navbar__list-item"></i>
+          <% end %>
+          <%= link_to new_list_path do %>
+            <i class="fa-solid fa-plus navbar__list-item"></i>
+          <% end %>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
